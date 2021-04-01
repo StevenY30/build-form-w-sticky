@@ -1,71 +1,138 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
+body {
+	font-family: Arial, Helvetica, sans-serif;
 }
 
-
 .inner-container,
-section{
-    padding: 1rem;
+section {
+	padding: 1rem;
 }
 
 
 /***** Typography******* */
-h2{
-    color: #dc413e;
-    text-transform: uppercase;
-    font-size: 3.75rem;
-    font-weight: 200;
+
+h2,
+h3 {
+	color: #dc413e;
+	text-transform: uppercase;
+	font-size: 3.75rem;
+	font-weight: 200;
 }
 
-p{
-    margin-bottom: 1.5rem;
+h3 {
+	font-size: 2.8125rem;
 }
 
-
-header{
-    background-color: #000;
+p {
+	margin-bottom: 1.5rem;
 }
 
-svg{
-    fill: #fff;
+header {
+	background-color: #000;
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
 }
 
-.nav-links{
-    display: flex;
-    flex-flow: wrap;
+svg {
+	fill: #fff;
 }
 
-.nav-links a{
-    color: #fff;
-    text-transform:uppercase;
-    padding: 1.5rem 0.5rem;
-    text-decoration: none;
-    display: block;
+.nav-links {
+	display: flex;
+	flex-flow: wrap;
 }
 
-.nav-links a:hover{
-    color: #dc413e;
+.nav-links a {
+	color: #fff;
+	text-transform: uppercase;
+	padding: 1.5rem 0.5rem;
+	text-decoration: none;
+	display: block;
 }
+
+.nav-links a:hover {
+	color: #dc413e;
+}
+
 
 /***** Form Styling ******* */
 
-fieldset{
-    border: none;
-    padding: 0;
+fieldset {
+	border: none;
+	padding: 0;
+	margin-bottom: 40px;
 }
 
 label {
-    font-size: 1.875rem;
-    text-transform: uppercase;
-    display: block;
+	font-size: 1.875rem;
+	text-transform: uppercase;
+	display: block;
 }
 
-input{
-    width: 100%;
-    border: 1px solid #c0c0c0;
-    border-radius: 5px;
-    padding: 0.5rem;
-    box-shadow: 2px 2px 3px #e8e8e8;
+input,
+textarea {
+	width: 100%;
+	border: 1px solid #c0c0c0;
+	border-radius: 5px;
+	padding: 0.5rem;
+	box-shadow: 2px 2px 3px #e8e8e8;
 }
 
+textarea {
+	resize: vertical;
+	min-height: 300px;
+}
 
+input[type="checkbox"] {
+	width: 20px;
+	height: 20px;
+	margin: 0;
+	padding: 0;
+}
+
+label[for="accept"] {
+	display: inline;
+	font-size: 1.2rem;
+}
+
+input[type="submit"] {
+	text-transform: uppercase;
+	font-size: 1.875rem;
+	width: auto;
+	border: none;
+	background-color: #fff;
+	box-shadow: none;
+	font-weight: bold;
+	cursor: pointer;
+	transition: padding-left 1s ease;
+}
+
+input[type="submit"]:hover {
+	color: #dc413e;
+	padding-left: 20px;
+}
+
+input:invalid {
+	background-color: red;
+}
+
+@media only screen and (min-width: 1260px) {
+	/* move to a fixed width container and 2 column layout */
+	fieldset {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	fieldset div {
+		flex: 0 1 49%;
+	}
+	h3 {
+		width: 100%;
+	}
+	.inner-container,
+	section {
+		padding: 0;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+}
